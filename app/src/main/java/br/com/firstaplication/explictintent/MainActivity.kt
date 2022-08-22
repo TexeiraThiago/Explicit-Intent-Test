@@ -33,13 +33,13 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(context, ACTIVITY2)
                 intent.putExtra("Name", text)
                 startActivity(intent)
+                etName.setText("")
             }
         }
 
         val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {result: ActivityResult ->
 
             if (result.resultCode == RESULT_OK){
-                Log.d("Intent" , "result was: "+ result.data)
                 val intent = result.data
 
                 val text = intent?.getStringExtra("Surname") ?: "no data received"
@@ -61,6 +61,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             tvResult.visibility = View.VISIBLE
+            etName.setText("")
+            etName.focusable
         }
 
         btnActivity3.setOnClickListener {

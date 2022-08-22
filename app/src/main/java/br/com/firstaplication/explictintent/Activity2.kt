@@ -2,6 +2,7 @@ package br.com.firstaplication.explictintent
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 
 class Activity2 : AppCompatActivity() {
@@ -15,5 +16,11 @@ class Activity2 : AppCompatActivity() {
         val finalText = "$result, welcome to activity2"
 
         tvWelcome.setText(finalText)
+
+        val btnBack = findViewById<Button>(R.id.btnBack)
+
+        btnBack.setOnClickListener {
+            finish()
+        }
     }
 }
