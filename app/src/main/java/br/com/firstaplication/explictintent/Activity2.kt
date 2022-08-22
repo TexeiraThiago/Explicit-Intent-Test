@@ -10,5 +10,10 @@ class Activity2 : AppCompatActivity() {
         setContentView(R.layout.activity_2)
 
         val tvWelcome = findViewById<TextView>(R.id.tvWelcome)
+
+        val result = intent.getStringExtra("Name").toString()
+        val finalText = "$result, welcome to activity2"
+
+        tvWelcome.setText(finalText)
     }
 }
